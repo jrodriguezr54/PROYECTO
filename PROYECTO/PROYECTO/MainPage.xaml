@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PROYECTO.MainPage">
+
+    <StackLayout>
+        <Label Text="PAGINA PRINCIPAL" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        <Entry x:Name="txtcodigo" Placeholder="INGRESE CODIGO" Keyboard="Text"/>
+        <Entry x:Name="txtnombre" Placeholder="INGRESE NOMBRE COMPLETO" Keyboard="Text"/>
+        <Entry x:Name="txtpais" Placeholder="INGRESE PAIS" Keyboard="Text"/>
+        <Entry x:Name="txtdepartamento" Placeholder="INGRESE DEPARTAMENTO" Keyboard="Text"/>
+        <Entry x:Name="txtmunicipio" Placeholder="INGRESE MUNICIPIO" Keyboard="Text"/>
+        <Entry x:Name="txtresidencia" Placeholder="INGRESE RESIDENCIA" Keyboard="Text"/>
+
+        <Button x:Name="btnguardar" Text="GUARDAR" Clicked="btnguardar_Clicked"/>
+        <Button x:Name="btnactualizar" Text="Actualizar" Clicked="btnactualizar_Clicked" IsVisible="False"/>
+        <Button x:Name="btneliminar" Text="Eliminar" Clicked="btneliminar_Clicked" IsVisible="False"/>
+        <ListView x:Name="listempleado" ItemSelected="listempleado_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding codigo}" Grid.Row="0" Grid.Column="0" TextColor="Blue" />
+                            <Label Text="{Binding nombre}" Grid.Row="0" Grid.Column="1" TextColor="Blue" />
+                            <Label Text="{Binding pais}" Grid.Row="0" Grid.Column="2" TextColor="Blue"/>
+                            <Label Text="{Binding departamento}" Grid.Row="1" Grid.Column="0" TextColor="Blue"/>
+                            <Label Text="{Binding municipio}"  Grid.Row="1" Grid.Column="1" TextColor="Blue"/>
+                            <Label Text="{Binding residencia}" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" TextColor="Blue"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout> 
+
+</ContentPage>
